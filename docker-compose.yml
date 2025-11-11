@@ -1,0 +1,6 @@
+services:
+  usermanager:
+    image: ${DOCKER_REGISTRY-}usermanager
+    build:
+      context: .
+      dockerfile: UserManager/Dockerfile
