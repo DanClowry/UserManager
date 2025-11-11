@@ -1,7 +1,10 @@
+using Azure.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Graph;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 
@@ -18,6 +21,19 @@ builder.Services.AddAuthorization(options =>
 });
 builder.Services.AddRazorPages()
     .AddMicrosoftIdentityUI();
+
+builder.Services.AddScoped(s =>
+{
+    var graphSecret = new ClientSecretCredential(
+        builder.Configuration["Graph:TenantId"],
+        builder.Configuration["Graph:ClientId"],
+        builder.Configuration["Graph:ClientSecret"]
+    );
+
+    var graphScopes = new[] { "https://graph.microsoft.com/.default" };
+
+    return new GraphServiceClient(graphSecret, graphScopes);
+});
 
 var app = builder.Build();
 
