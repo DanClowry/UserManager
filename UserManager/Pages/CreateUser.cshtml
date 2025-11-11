@@ -2,3 +2,11 @@
 @model UserManager.Pages.CreateUserModel
 @{
 }
+
+<form method="post">
+    First name:
+    <input asp-for="NewUser.FirstName" />
+    Last name:
+    <input asp-for="NewUser.LastName" />
+    <input type="submit" />
+</form>
