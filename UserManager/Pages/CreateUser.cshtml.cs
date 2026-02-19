@@ -42,7 +42,7 @@ namespace UserManager.Pages
                     PasswordProfile = new()
                     {
                         ForceChangePasswordNextSignIn = true,
-                        Password = "Password1"
+                        Password = "Password1!"
                     }
                 });
                 var users = await _graphServiceClient.Users.GetAsync((requestConfiguration) =>
