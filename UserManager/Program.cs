@@ -30,6 +30,7 @@ builder.Services.AddScoped(s =>
 
     var graphScopes = new[] { "https://graph.microsoft.com/.default" };
 
+    // Create the client
     return new GraphServiceClient(graphSecret, graphScopes);
 });
 
