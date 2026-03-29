@@ -31,7 +31,7 @@ namespace UserManager.Pages
             if (NewUser != null)
             {
                 Console.WriteLine(NewUser.FirstName);
-                // Create hte account
+                // Create the account
                 var newUserRes = await _graphServiceClient.Users.PostAsync(new()
                 {
                     AccountEnabled = false,
