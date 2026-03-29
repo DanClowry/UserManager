@@ -30,17 +30,14 @@ builder.Services.AddScoped(s =>
 
     var graphScopes = new[] { "https://graph.microsoft.com/.default" };
 
-    // Create the client
     return new GraphServiceClient(graphSecret, graphScopes);
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios
     app.UseHsts();
 }
 
