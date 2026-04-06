@@ -17,6 +17,7 @@ builder.Services.AddAuthorization(options =>
 {
     options.FallbackPolicy = options.DefaultPolicy;
 });
+// Add ident
 builder.Services.AddRazorPages()
     .AddMicrosoftIdentityUI();
 
