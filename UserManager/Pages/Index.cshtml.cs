@@ -7,7 +7,7 @@ namespace UserManager.Pages
     {
         public void OnGet()
         {
-
+// do nothing special
         }
     }
 }
