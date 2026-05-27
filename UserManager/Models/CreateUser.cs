@@ -8,6 +8,7 @@
         public string LastName { get; set; }
         // middle name
         public string MiddleName { get; set; }
+        // age
         public int Age { get; set; }
     }
 }
