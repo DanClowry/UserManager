@@ -6,5 +6,6 @@
         public string FirstName { get; set; }
         // lname
         public string LastName { get; set; }
+        public string MiddleName { get; set; }
     }
 }
